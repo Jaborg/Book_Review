@@ -10,10 +10,6 @@ templates = Jinja2Templates(directory="templates")
 
 
 
-#orm
-
-
-
 @app.get("/")
 async def index(request : Request):
 
