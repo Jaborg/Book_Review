@@ -5,14 +5,10 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-
 templates = Jinja2Templates(directory="templates")
 
 
-
 @app.get("/")
-async def index(request : Request):
+async def index(request: Request):
 
-
-    return templates.TemplateResponse("frontpage.html",
-        {"request":request })
+    return templates.TemplateResponse("frontpage.html", {"request": request})
