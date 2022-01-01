@@ -17,6 +17,8 @@ $ poetry --version
 Poetry version X.Y.Z
 ```
 
+Alternatively, you can use the `Makefile` to install poetry. Try `make requirements`
+
 More detailed poetry installation can be found [here](https://python-poetry.org/docs/)
 
 The `Makefile` will provide you with handy commands. Check it out. For example, try `make lint`.
