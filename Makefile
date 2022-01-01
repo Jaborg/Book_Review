@@ -1,4 +1,4 @@
-.PHONy: lint
+.PHONy: requirements shell app containers deps lint check test clean
 
 requirements:
 	@echo "Installing poetry to global python interpreter..."
@@ -9,7 +9,7 @@ shell:
 	@poetry shell
 
 app:
-	@poetry run python -m main
+	@poetry run uvicorn webconnect:app --reload
 
 containers:
 	@docker-compose up -d
