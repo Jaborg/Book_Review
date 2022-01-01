@@ -9,7 +9,7 @@ shell:
 	@poetry shell
 
 app:
-	@poetry run python -m main.py
+	@poetry run python -m main
 
 containers:
 	@docker-compose up -d
