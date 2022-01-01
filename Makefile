@@ -22,3 +22,7 @@ lint:
 
 check:
 	@poetry run python -m mypy .
+
+clean:
+	@echo "Cleaning pycache files..."
+	@rm -rf __pycache__
