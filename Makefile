@@ -23,6 +23,9 @@ lint:
 check:
 	@poetry run python -m mypy .
 
+test:
+	@poetry run pytest tests
+
 clean:
 	@echo "Cleaning pycache files..."
 	@rm -rf __pycache__
