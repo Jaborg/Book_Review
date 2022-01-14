@@ -17,6 +17,14 @@ async def index(request: Request):
 
 @app.get("/information")
 async def info(request: Request):
-    print('hello')
+
 
     return templates.TemplateResponse("information.html", {"request": request})
+
+
+
+@app.get("/reviews")
+async def review(request: Request):
+
+
+    return templates.TemplateResponse("reviews.html", {"request": request})
