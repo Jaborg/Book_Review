@@ -9,7 +9,7 @@ shell:
 	@poetry shell
 
 app:
-	@poetry run uvicorn webconnect:app --reload
+	@poetry run uvicorn application:application --reload
 
 containers:
 	@docker-compose up -d

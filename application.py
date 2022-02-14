@@ -3,19 +3,19 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-app = FastAPI()
+application = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/")
+@application.get("/")
 async def index(request: Request):
     print('Ypoooo')
     return templates.TemplateResponse("frontpage.html", {"request": request})
 
 
 
-@app.get("/information")
+@application.get("/information")
 async def info(request: Request):
 
 
@@ -23,7 +23,7 @@ async def info(request: Request):
 
 
 
-@app.get("/reviews")
+@application.get("/reviews")
 async def review(request: Request):
 
 
