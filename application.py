@@ -10,7 +10,6 @@ templates = Jinja2Templates(directory="templates")
 
 @application.get("/")
 async def index(request: Request):
-    print('Ypoooo')
     return templates.TemplateResponse("frontpage.html", {"request": request})
 
 
