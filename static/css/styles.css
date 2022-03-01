@@ -1,3 +1,29 @@
+
+p{
+  font-size: 15px;
+}
+
+body{
+  background-image: url('https://i.ibb.co/P6jYy2Y/deep-teal-free-solidcolor-background.jpg');
+}
+
+
+
+
+
+
+
+
+
+.card-img-top{
+height: 225px;
+width: 100%;
+display: block;
+
+}
+
+
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   width: 150px;
@@ -34,11 +60,15 @@
 .flip-card-front {
   background-color: #bbb;
   color: black;
+
 }
 
 /* Style the back side */
 .flip-card-back {
-background-image: url('https://i.ibb.co/P6jYy2Y/deep-teal-free-solidcolor-background.jpg');
+background-image: url('https://i.ibb.co/rsVZcbb/bg-solid.jpg');
   color: white;
   transform: rotateY(180deg);
+  width: 13rem;
+  border-radius: 10px;
+  border-style: inset;
 }
