@@ -5,7 +5,7 @@ p{
 
 body{
   background-image: url('https://i.ibb.co/P6jYy2Y/deep-teal-free-solidcolor-background.jpg');
-  padding-top: 75px;
+  padding-top: 50px;
 }
 
 .navbar {
@@ -73,16 +73,4 @@ background-image: url('https://i.ibb.co/rsVZcbb/bg-solid.jpg');
   width: 13rem;
   border-radius: 10px;
   border-style: inset;
-}
-
-.navbar-brand
-{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto;
-}
-.navbar-toggle {
-    z-index:3;
 }
