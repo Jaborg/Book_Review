@@ -8,11 +8,15 @@ def get_article_by_id(db: Session, article_id: int):
 
 
 
+def get_articles(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Article).offset(skip).limit(limit).all()
+
+
 
 
 def create_article(db: Session, article: schemas.ArticleCreate):
-    db_article = models.Article(title=article.title)
-    db.add(db_user)
+    db_article = models.Article(title_art=article.title_art,picture = article.picture)
+    db.add(db_article)
     db.commit()
-    db.refresh(db_user)
+    db.refresh(db_article)
     return db_article

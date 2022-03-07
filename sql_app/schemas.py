@@ -4,17 +4,20 @@ from pydantic import BaseModel
 
 
 class ArticleBase(BaseModel):
-    title: str
-    description: Optional[str] = None
+    id: int
 
 
 class ArticleCreate(ArticleBase):
-    pass
+    title_art: str
+    picture:str
+
 
 
 class Article(ArticleBase):
-    id: int
-    owner_id: int
+    is_reviewed: bool
+    title_art: str
+    picture:str
+
 
     class Config:
         orm_mode = True
