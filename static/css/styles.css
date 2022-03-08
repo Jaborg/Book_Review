@@ -1,36 +1,32 @@
-
-p{
+p {
   font-size: 12.5px;
 }
 
-body{
+body {
   background-image: url('https://i.ibb.co/P6jYy2Y/deep-teal-free-solidcolor-background.jpg');
   padding-top: 50px;
+  padding-bottom: 50000px;
 }
 
 .navbar {
-  height: 75px;
-}
-
-.container{
-  border-radius: 25px;
+  height: 70px;
+  padding-top: 70px;
 }
 
 
-.card-img-top{
-height: 225px;
-width: 100%;
-display: block;
 
+.card-img-top {
+  height: 225px;
+  width: 100%;
+  display: block;
 }
-
-
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   width: 150px;
   height: 225px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -50,11 +46,11 @@ display: block;
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
-
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
+  /* Safari */
   backface-visibility: hidden;
 }
 
@@ -62,12 +58,11 @@ display: block;
 .flip-card-front {
   background-color: #bbb;
   color: black;
-
 }
 
 /* Style the back side */
 .flip-card-back {
-background-image: url('https://i.ibb.co/rsVZcbb/bg-solid.jpg');
+  background-image: url('https://i.ibb.co/rsVZcbb/bg-solid.jpg');
   color: white;
   transform: rotateY(180deg);
   width: 13rem;
