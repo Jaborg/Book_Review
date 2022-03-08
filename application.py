@@ -37,6 +37,8 @@ async def review(request: Request):
     return templates.TemplateResponse("reviews.html", {"request": request})
 
 
+
+
 #Databse shtuff
 
 # Dependency
@@ -60,6 +62,12 @@ def create_article(article: schemas.ArticleCreate, db: Session = Depends(get_db)
 
 
 @application.get("/articles/", response_model=list[schemas.Article])
-def read_articles(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def read_articles(request: Request , skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     articles = crud.get_articles(db, skip=skip, limit=limit)
-    return articles
+    return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
+
+
+@application.get("/articles/{id}", response_model=list[schemas.Article])
+def read_article_by_id(request: Request , skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    articles = crud.get_articles(db, skip=skip, limit=limit)
+    return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
