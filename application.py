@@ -15,6 +15,17 @@ application.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
+#Databse shtuff
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
 
 @application.get("/")
 async def index(request: Request):
@@ -31,23 +42,14 @@ async def info(request: Request):
 
 
 @application.get("/reviews")
-async def review(request: Request):
+async def review(request: Request,db: Session = Depends(get_db)):
+    articles = crud.get_articles(db, skip=0, limit=100)
+
+    return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
 
 
-    return templates.TemplateResponse("reviews.html", {"request": request})
 
 
-
-
-#Databse shtuff
-
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 
@@ -67,7 +69,39 @@ def read_articles(request: Request , skip: int = 0, limit: int = 100, db: Sessio
     return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
 
 
-@application.get("/articles/{id}", response_model=list[schemas.Article])
+@application.get("/articles/{id}", response_model=schemas.Article)
 def read_article_by_id(request: Request , skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     articles = crud.get_articles(db, skip=skip, limit=limit)
     return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+#
+#
+# Response body
+# Download
+# [
+#   {
+#     "id": 1,
+#     "is_reviewed": false,
+#     "title_art": "emma",
+#     "picture": "something.url"
+#   },
+#   {
+#     "id": 2,
+#     "is_reviewed": false,
+#     "title_art": "moon",
+#     "picture": "something_else.url"
+#   }
+# ]
