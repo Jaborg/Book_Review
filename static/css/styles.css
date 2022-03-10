@@ -28,6 +28,10 @@ body {
   border-radius: 25px;
 }
 
+.position-relative{
+  background-color: #bbb;
+}
+
 .card-img-top {
   height: 15rem;
 }
