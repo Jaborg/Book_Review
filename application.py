@@ -70,8 +70,8 @@ def read_articles(request: Request , skip: int = 0, limit: int = 100, db: Sessio
 
 
 @application.get("/articles/{id}", response_model=schemas.Article)
-def read_article_by_id(request: Request , skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    articles = crud.get_articles(db, skip=skip, limit=limit)
+def read_article_by_id(request: Request ,id =id, db: Session = Depends(get_db)):
+    articles = crud.get_article_by_id(db,id)
     return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
 
 
