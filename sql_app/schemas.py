@@ -11,6 +11,7 @@ class ArticleCreate(ArticleBase):
     title_art: str
     picture:str
     date:str
+    main_text:str
 
 
 

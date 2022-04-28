@@ -15,7 +15,7 @@ def get_articles(db: Session, skip: int = 0, limit: int = 100):
 
 
 def create_article(db: Session, article: schemas.ArticleCreate):
-    db_article = models.Article(title_art=article.title_art,picture = article.picture,date=article.date)
+    db_article = models.Article(title_art=article.title_art,picture = article.picture,date=article.date,main_text=article.main_text)
     db.add(db_article)
     db.commit()
     db.refresh(db_article)
