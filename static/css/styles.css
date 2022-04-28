@@ -7,7 +7,10 @@ body {
   padding-top: 60px;
   padding-bottom: 50px;
 }
-
+div {
+      white-space: pre-wrap;
+  }
+  
 .bottoms-navbar{
   padding-bottom: 100px;
 }
