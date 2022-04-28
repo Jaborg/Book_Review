@@ -10,6 +10,7 @@ class ArticleBase(BaseModel):
 class ArticleCreate(ArticleBase):
     title_art: str
     picture:str
+    date:str
 
 
 
