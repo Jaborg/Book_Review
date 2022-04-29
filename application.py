@@ -72,8 +72,8 @@ def read_articles(request: Request , skip: int = 0, limit: int = 100, db: Sessio
 @application.get("/articles/{id}", response_model=schemas.Article)
 def read_article_by_id(request: Request ,id =id, db: Session = Depends(get_db)):
     article = crud.get_article_by_id(db,id)
-    print(article.picture)
     return templates.TemplateResponse("article.html", {"request": request,"article":article})
+
 
 
 

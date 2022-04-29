@@ -12,18 +12,19 @@
           <!-- Post title-->
           <h1 class="fw-bolder mb-1">{{article.title_art}}</h1>
           <!-- Post meta content-->
-          <div class="text-muted fst-italic mb-2">Posted on {{article.date}} by Start Bootstrap</div>
+          <div class="text-muted fst-italic mb-2">Posted on {{article.date}} by Jaborg</div>
           <!-- Post categories-->
           <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
           <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
         </header>
         <!-- Preview image figure-->
-        <figure class="mb-4"><img class="img-fluid rounded" src={{article.picture}} alt="..."></figure>
+        <figure class="mb-4"><img class="img-fluid rounded" src={{article.picture}} alt="..." width=200pm></figure>
         <!-- Post content-->
-        <section class="mb-5">
-          <p class="fs-5 mb-4">
-                  {{article.main_text}} </p>
+        <section class="mb-5 bg-light rounded">
+          <div class ='p-3  container'>
 
+          <p class="fs-5 mb-4 center-text" style="white-space: pre-line">{{article.main_text}} </p>
+          </div>
         </section>
       </article>
 
