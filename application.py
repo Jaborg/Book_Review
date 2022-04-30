@@ -15,7 +15,6 @@ application.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-#Databse shtuff
 
 # Dependency
 def get_db():
@@ -24,7 +23,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
 
 
 @application.get("/")
