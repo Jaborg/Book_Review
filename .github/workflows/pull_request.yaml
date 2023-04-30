@@ -21,8 +21,8 @@ jobs:
         run: make setup
 
       - name: Lint with Black
-        run: env/bin/pip3.9 black book_review_web/
+        run: env/bin/python3.9 -m black book_review_web/
 
       - name: Lint with isort
-        run: env/bin/pip3.9 isort requirements.txt
+        run: env/bin/python3.9 -m isort requirements.txt
 
