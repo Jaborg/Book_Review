@@ -20,7 +20,7 @@ containers:
 	@docker-compose up -d
 
 test:
-	env/bin/python3.9 run pytest tests
+	pytest tests
 
 clean:
 	@echo "Cleaning pycache files..."
