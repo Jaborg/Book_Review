@@ -1,8 +1,8 @@
 name: Pull Request Workflow
 on:
-  pull_request:
+  push:
     branches:
-      - master
+      - Testing_workflow
 
 jobs:
   build-and-test:
