@@ -1,12 +1,12 @@
 name: Pull Request Workflow
 on:
-  pull_request:
+  push:
     branches:
-      - master
+      - Testing_workflow
 
 jobs:
   build-and-test:
-    runs-on: macos12
+    runs-on: macos-12
 
     steps:
       - name: Checkout code
