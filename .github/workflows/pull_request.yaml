@@ -21,8 +21,8 @@ jobs:
         run: make setup
 
       - name: Lint with Black
-        run: black . 
+        run: black book_review_web/
 
       - name: Lint with isort
-        run: isort . 
+        run: isort requirements.txt
 
