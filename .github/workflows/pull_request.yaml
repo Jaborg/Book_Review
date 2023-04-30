@@ -22,7 +22,20 @@ jobs:
 
       - name: Lint with Black
         run: env/bin/python3.9 -m black .
+        id: black
+
 
       - name: Lint with isort
         run: env/bin/python3.9 -m isort requirements.txt
+        id: isort
+
+
+      - name: Commit changes
+        if: steps.black.outcome == 'success' && steps.isort.outcome == 'success'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Auto-format code with Black and isort"
+          git push
 
