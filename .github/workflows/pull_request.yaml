@@ -31,11 +31,10 @@ jobs:
 
       - name: Commit changes
         if: steps.black.outcome == 'success' && steps.isort.outcome == 'success'
-        uses: actions/checkout@master
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git checkout main
+          git checkout Testing_workflow
           git add .
           git commit -m "Auto-format code with Black and isort"
           git push
