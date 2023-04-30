@@ -1,8 +1,8 @@
 name: Pull Request Workflow
 on:
-  push:
+  pull_request:
     branches:
-      - Testing_workflow
+      - master
 
 jobs:
   build-and-test:
@@ -18,11 +18,11 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: make setup
 
       - name: Lint with Black
-        run: black . 
+        run: env/bin/python3.9 -m black .
 
       - name: Lint with isort
-        run: isort . 
+        run: env/bin/python3.9 -m isort requirements.txt
 
