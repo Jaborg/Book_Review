@@ -15,3 +15,5 @@ uvicorn==0.16.0
 requests
 pytest
 sqlalchemy
+isort
+black
