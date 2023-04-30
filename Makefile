@@ -3,7 +3,7 @@
 
 setup:
 	 python3.9 -m venv env
-	 /Users/jacob/workspace/book_review_web/env/bin/python3.9 -m pip install --upgrade pip
+	 env/bin/python3.9 -m pip install --upgrade pip
 	 env/bin/pip3.9 install -r requirements.txt
 
 
