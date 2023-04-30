@@ -1,30 +1,26 @@
 .PHONy: lint
 
-requirements:
-	@echo "Installing poetry to global python interpreter..."
-	@curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-	@echo "poetry successfully installed."
+
+setup:
+	 python3.9 -m venv env
+	 /Users/jacob/workspace/book_review_web/env/bin/python3.9 -m pip install --upgrade pip
+	 env/bin/pip3.9 install -r requirements.txt
+
+
+clean_env:
+	rm -r env
 
 shell:
 	@poetry shell
 
 app:
-	@poetry run uvicorn application:application --reload
+	uvicorn application:application --reload
 
 containers:
 	@docker-compose up -d
 
-deps:
-	@poetry install
-
-lint:
-	@poetry run python -m black .
-
-check:
-	@poetry run python -m mypy .
-
 test:
-	@poetry run pytest tests
+	env/bin/python3.9 run pytest tests
 
 clean:
 	@echo "Cleaning pycache files..."
