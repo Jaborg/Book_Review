@@ -9,17 +9,15 @@ class ArticleBase(BaseModel):
 
 class ArticleCreate(ArticleBase):
     title_art: str
-    picture:str
-    date:str
-    main_text:str
-
+    picture: str
+    date: str
+    main_text: str
 
 
 class Article(ArticleBase):
     is_reviewed: bool
     title_art: str
-    picture:str
-
+    picture: str
 
     class Config:
         orm_mode = True
