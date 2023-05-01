@@ -35,8 +35,10 @@ jobs:
       - name: Commit changes
         if: steps.black.outcome == 'success' && steps.isort.outcome == 'success'
         run: |
+          echo $GITHUB_HEAD_REF
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git checkout $GITHUB_HEAD_REF
           git add .
           git commit -m "Auto-format code with Black and isort"
           git push
