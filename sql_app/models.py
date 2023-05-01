@@ -12,4 +12,4 @@ class Article(Base):
     main_text = Column(String)
     picture = Column(String)
     is_reviewed = Column(Boolean, default=False)
-    date = Column(String,default=False)
+    date = Column(String, default=False)

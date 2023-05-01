@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from  sql_app import crud, models, schemas
+from sql_app import crud, models, schemas
 from sql_app.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
@@ -30,26 +30,18 @@ async def index(request: Request):
     return templates.TemplateResponse("frontpage.html", {"request": request})
 
 
-
 @application.get("/information")
 async def info(request: Request):
-
-
     return templates.TemplateResponse("information.html", {"request": request})
 
 
-
 @application.get("/reviews")
-async def review(request: Request,db: Session = Depends(get_db)):
+async def review(request: Request, db: Session = Depends(get_db)):
     articles = crud.get_articles(db, skip=0, limit=100)
 
-    return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
-
-
-
-
-
-
+    return templates.TemplateResponse(
+        "reviews.html", {"request": request, "articles": articles}
+    )
 
 
 @application.post("/articles/", response_model=schemas.Article)
@@ -60,29 +52,22 @@ def create_article(article: schemas.ArticleCreate, db: Session = Depends(get_db)
     return crud.create_article(db=db, article=article)
 
 
-
 @application.get("/articles/", response_model=list[schemas.Article])
-def read_articles(request: Request , skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def read_articles(
+    request: Request, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
+):
     articles = crud.get_articles(db, skip=skip, limit=limit)
-    return templates.TemplateResponse("reviews.html", {"request": request,"articles":articles})
+    return templates.TemplateResponse(
+        "reviews.html", {"request": request, "articles": articles}
+    )
 
 
 @application.get("/articles/{id}", response_model=schemas.Article)
-def read_article_by_id(request: Request ,id =id, db: Session = Depends(get_db)):
-    article = crud.get_article_by_id(db,id)
-    return templates.TemplateResponse("article.html", {"request": request,"article":article})
-
-
-
-
-
-
-
-
-
-
-
-
+def read_article_by_id(request: Request, id=id, db: Session = Depends(get_db)):
+    article = crud.get_article_by_id(db, id)
+    return templates.TemplateResponse(
+        "article.html", {"request": request, "article": article}
+    )
 
 
 #
