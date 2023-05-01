@@ -36,6 +36,7 @@ jobs:
         if: steps.black.outcome == 'success' && steps.isort.outcome == 'success'
         run: |
           echo $GITHUB_HEAD_REF
+          echo ${{env.BRANCH}}
           git branch
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
