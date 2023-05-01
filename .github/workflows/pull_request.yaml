@@ -39,7 +39,6 @@ jobs:
           git branch
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git remote set-url origin
           git checkout origin/$GITHUB_HEAD_REF
           git add .
           git commit -m "Auto-format code with Black and isort"
