@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git checkout Testing_workflow
+          git checkout $GITHUB_HEAD_REF
           git add .
           git commit -m "Auto-format code with Black and isort"
           git push
