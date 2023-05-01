@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      -name: Switch to Current Branch
+       run: git checkout ${{env.BRANCH}} 
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
