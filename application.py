@@ -34,7 +34,7 @@ def read_articles(request: Request):
         "reviews.html", {"request": request}
     )
 
-@application.get("/articles/{id}", response_model=schemas.Article)
+@application.get("/articles/{id}")
 def read_article_by_id(request: Request):
     return templates.TemplateResponse(
         "article.html", {"request": request}
