@@ -22,20 +22,14 @@ async def info(request: Request):
 
 @application.get("/reviews")
 async def review(request: Request):
-
-    return templates.TemplateResponse(
-        "reviews.html", {"request": request}
-    )
+    return templates.TemplateResponse("reviews.html", {"request": request})
 
 
 @application.get("/articles/")
 def read_articles(request: Request):
-    return templates.TemplateResponse(
-        "reviews.html", {"request": request}
-    )
+    return templates.TemplateResponse("reviews.html", {"request": request})
+
 
 @application.get("/articles/{id}")
 def read_article_by_id(request: Request):
-    return templates.TemplateResponse(
-        "article.html", {"request": request}
-    )
+    return templates.TemplateResponse("article.html", {"request": request})
