@@ -1,5 +1,6 @@
 # Jaborg's annals of retrospection
 
+
 This repositry contains the source code for the erudite retrospections of Jaborg the Wise. It is said that Jaborg the Wise once read 48 books in 365 earth day cycles.
 
 ## Developer notes
