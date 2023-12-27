@@ -2,9 +2,10 @@
 
 
 setup:
-	 python3.9 -m venv env
-	 env/bin/python3.9 -m pip install --upgrade pip
-	 env/bin/pip3.9 install -r requirements.txt
+	 rm -r env
+	 python3 -m venv env
+	 env/bin/python3 -m pip install --upgrade pip
+	 env/bin/pip install -r requirements.txt
 
 
 clean_env:
